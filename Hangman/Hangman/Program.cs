@@ -95,15 +95,17 @@ namespace Hangman
                 if (!wordToGuess.Contains(key))
                 {
                     lives--;
-
+                    
                     var placeholder = lives == 1 ? "life" : "lives";
 
                     if (lives > 0)
                     {
                         Console.WriteLine($"The letter {key} is not in the word to guess. You have {lives} {placeholder} left");
                     }
+                    
 
                     //Metodo più lungo di quello sopra
+
                     //if (lives > 1)
                     //{
                     //    Console.WriteLine($"The letter {key} is not in the word to guess. You have {lives} lives left");
@@ -114,11 +116,7 @@ namespace Hangman
                     //}
                 }
 
-                if (lives > 0)
-                {
-                    Console.WriteLine($" You have {lives} lives left");
-                }
-                else
+                if (lives == 0)
                 {
                     Console.WriteLine($" You have lost! The word was {wordToGuess}.");
                 }
